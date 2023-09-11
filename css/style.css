@@ -3,33 +3,55 @@
     padding: 0;
 }
 
-main {
-    font-family: "Times New Roman", Times, serif;
-    font-style: normal;
-    font-weight: 700;
+body {
+    background-color: crimson;
+
+    & main {
+        font-style: normal;
+        font-weight: 700;
+        margin: 20px;
+    }
 }
+
 header {
     height: 150px;
     width: 100vw;
     text-align: center;
-    background-color: red;
+    background-color: black;
+    color: crimson;
 
     .underline {
         text-decoration: solid underline 2px whitesmoke;
     }
+
     & h1 {
         font-size: 3rem;
         font-weight: normal;
-        letter-spacing: 0.8rem;
+        letter-spacing: 0.5rem;
         line-height: 80px;
         text-transform: uppercase;
     }
+
     & h2 {
         letter-spacing: 0.2rem;
+
+        & .palabra {
+            color: transparent;
+
+            &:hover {
+                color: yellow;
+            }
+        }
     }
 }
 
 section {
-    div {
+    & div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+        height: 100px;
+        width: 100px;
     }
 }
