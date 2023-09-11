@@ -14,25 +14,44 @@ body {
 }
 
 header {
-    height: 150px;
-    width: 100vw;
-    text-align: center;
     background-color: black;
     color: crimson;
+    height: 150px;
+    text-align: center;
+    width: 100vw;
+    /* grid layout */
+    display: grid;
+    grid-template-areas:
+        "titulo-1"
+        "titulo-2"
+        "subtitulo";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: start;
+    padding-left: 20px;
 
-    .underline {
-        text-decoration: solid underline 2px whitesmoke;
+    & div {
+        & h1 {
+            text-transform: uppercase;
+            font-weight: normal;
+
+            .underline {
+                text-decoration: solid underline 2px whitesmoke;
+            }
+        }
     }
 
-    & h1 {
-        font-size: 3rem;
-        font-weight: normal;
-        letter-spacing: 0.5rem;
-        line-height: 80px;
-        text-transform: uppercase;
+    &:first-child {
+        grid-area: titulo-1;
+    }
+    &:last-child {
+        grid-area: titulo-2;
     }
 
     & h2 {
+        font-size: 1.3rem;
+        grid-area: subtitulo;
         letter-spacing: 0.2rem;
 
         & .palabra {
@@ -47,11 +66,34 @@ header {
 
 section {
     & div {
+        color: whitesmoke;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: whitesmoke;
+        border: 1px dashed whitesmoke;
         height: 100px;
-        width: 100px;
+        width: 120px;
+    }
+}
+
+/* media queries */
+
+@media screen and (min-width: 1024px) {
+    /* CORREGIR TITULO PARA QUE SE VEA EN LINEA */
+
+    header {
+        grid-template-areas:
+            "titulo"
+            "subtitulo";
+
+        & div {
+            grid-area: titulo;
+            font-size: 2.5rem;
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+        }
+    }
+    & h2 {
+        grid-area: subtitulo;
     }
 }

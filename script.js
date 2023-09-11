@@ -13,7 +13,7 @@ const palabrasRandom = [
 
 //CREO UN DIV DE EJEMPLO
 const div = document.createElement("div");
-div.textContent = "Hecho con JS";
+div.textContent = "Creado con JS";
 const seccion = document.querySelector(".contenedor");
 
 seccion.appendChild(div);
