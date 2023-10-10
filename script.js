@@ -12,14 +12,19 @@ const palabrasRandom = [
 ];
 
 //CREO UN DIV DE EJEMPLO
-const div = document.createElement("div");
-div.textContent = "Creado con JS";
-const seccion = document.querySelector(".contenedor");
+const div = document.querySelector(".contenedor");
 
-seccion.appendChild(div);
+let indiceAleatorio = Math.floor(Math.random() * palabrasRandom.length);
+let palabraSeleccionada = palabrasRandom[indiceAleatorio];
+// console.log(palabraSeleccionada);
 
-console.log(div.textContent);
+palabraSeleccionada.split("").forEach((letra) => {
+    console.log(palabraSeleccionada);
+    const span = document.createElement("span");
+    span.textContent = "_";
+    div.appendChild(span);
+});
 
-// Crear un div por cada letra que tenga la palabra.
-// Los divs deben tener un valor por defecto (espacio vacío).
-// Los divs deben tener un 'underline' donde iría la letra.
+// 10 palabras;
+// elegir aleatoreamente una palabra;
+// mostrar '_' por cada letra de la palabra aleatoria;
