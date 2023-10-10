@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
@@ -9,7 +9,21 @@ body {
     & main {
         font-style: normal;
         font-weight: 700;
-        margin: 20px;
+
+        & div {
+            display: flex;
+            height: 100px;
+            width: 100vw;
+            color: whitesmoke;
+            border: 1px dashed whitesmoke;
+            
+            & span {
+                text-align: center;
+                font-size: 3rem;
+                color: black;
+                background-color: yellow;
+            }
+        }
     }
 }
 
@@ -25,7 +39,6 @@ header {
         "titulo-1"
         "titulo-2"
         "subtitulo";
-    grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
     align-items: center;
     justify-items: start;
@@ -54,7 +67,7 @@ header {
         grid-area: subtitulo;
         letter-spacing: 0.2rem;
 
-        & .palabra {
+        & .oculto {
             color: transparent;
 
             &:hover {
@@ -64,36 +77,8 @@ header {
     }
 }
 
-section {
-    & div {
-        color: whitesmoke;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px dashed whitesmoke;
-        height: 100px;
-        width: 120px;
-    }
-}
-
 /* media queries */
 
 @media screen and (min-width: 1024px) {
     /* CORREGIR TITULO PARA QUE SE VEA EN LINEA */
-
-    header {
-        grid-template-areas:
-            "titulo"
-            "subtitulo";
-
-        & div {
-            grid-area: titulo;
-            font-size: 2.5rem;
-            letter-spacing: 0.5rem;
-            text-transform: uppercase;
-        }
-    }
-    & h2 {
-        grid-area: subtitulo;
-    }
 }
